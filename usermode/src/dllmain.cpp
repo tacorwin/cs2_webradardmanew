@@ -2,6 +2,14 @@
 
 bool main()
 {
+
+        if (!mem.Init("cs2.exe", true, true))
+    {
+        LOG_ERROR("DMA failed to initialize (Init)");
+        std::this_thread::sleep_for(std::chrono::seconds(5));
+        return 0;
+    }
+    
     if (!utils::is_updated())
         return {};
 
